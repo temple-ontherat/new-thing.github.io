@@ -33,7 +33,7 @@ return randWord;
 }
 let secretWord=getSecretWord();
 //document.getElementById("secret").innerHTML= secretWord;
-var result = "You guessed it! Play again. Another secret word has been selected.";
+var result = "You guessed it in ";
 var warning = "Your guess must be a 5-letter word with no repeating letters.";
 var tries ="";
 var samesame="";
@@ -86,7 +86,7 @@ function doResult() {
             
             hint="("+samesame+")"+":"+"("+ samelet+")";
             if (guess == secretWord) {//check for matching word
-            document.getElementById("success").innerHTML= guess+"! "+result;//display message
+            document.getElementById("success").innerHTML= guess+"! "+result+attempts+" tries! Play again!";//display message
             document.getElementById("guess").value="";//clear box
             document.getElementById("success").value="";//clear box
             secretWord=getSecretWord();
