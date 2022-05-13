@@ -74,11 +74,11 @@ function doResult() {
             
            for (i=0; i<5; i++) {
 if (guess.charAt(i)==secretWord.charAt(i)) {
-samesame+=guess.charAt(i);
+samesame+=guess.charAt(i)+" ";//adjusted for kerning
  } //try this next line to display 5 letter clue; also omitted else from line 68
-else {samesame+= "_ ";
+else {samesame+= " _ "; //adjusted for kerning
      if (secretWord.includes(guess.charAt(i))) 
-samelet+=guess.charAt(i);
+samelet+=guess.charAt(i)+" "; //adjusted for kerning
  }
             
             
@@ -87,7 +87,7 @@ samelet+=guess.charAt(i);
      //       return;   
             }     
             
-            hint="("+samesame+")"+":"+"("+ samelet+")";
+            hint="( "+samesame+")"+":"+"( "+ samelet+")"; //adjusted for kerning
             if (guess == secretWord) {//check for matching word
             document.getElementById("success").innerHTML= guess+"! "+result+(attempts+1)+" tries! Play again!";//display message
             document.getElementById("guess").value="";//clear box
