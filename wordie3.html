@@ -72,11 +72,13 @@ function doResult() {
              }
             
            for (i=0; i<5; i++) {
-                if (guess.charAt(i)==secretWord.charAt(i)) {
-                    samesame+=guess.charAt(i);
-              } else if (secretWord.includes(guess.charAt(i))) {
-                    samelet+=guess.charAt(i);
-                    }
+if (guess.charAt(i)==secretWord.charAt(i)) {
+samesame+=guess.charAt(i);
+ } //try this next line to display 5 letter clue; also omitted else from line 68
+else {samesame+= "_ ";
+     if (secretWord.includes(guess.charAt(i))) 
+samelet+=guess.charAt(i);
+ }
             
             
       //      document.getElementById("poop").innerHTML= warning;//display entries
