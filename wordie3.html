@@ -8,12 +8,12 @@
 </head>
 <body>
 <p id="secret">&nbsp</p>
-<center><h2>The object of this game is to guess a secret word. The secret word has five, non-repeating letters.</h2>
-<h2> Try to guess it by entering a similar word. With each word you guess you will be
+<center><h2 id="display1">The object of this game is to guess a secret word. The secret word has five, non-repeating letters.</h2> 
+<h2 id="display2"> Try to guess it by entering a similar word. With each word you guess you will be
 given a hint in the following format:</h2> 
-<h3><b>(common letters in the same place) : (common letters in different places)</b></h3>
-<h3>Here's an example: if the secret word is horse and you guess crust, the hint is (s):(r) .</h3>
-<h3>Type in your guess and press the button.</h3></center>
+<h3 id="display3"><b>(common letters in the same place) : (common letters in different places)</b></h3>
+<h3 id="display4">Here's an example: if the secret word is horse and you guess crust, the hint is (s):(r) .</h3>
+<h3 id="display5">Type in your guess and press the button.</h3></center>
 <center><p id="attempts">Number of attempts:</p> 
 <h2 id="success"></h2>
 <p id="poop"></p>
@@ -86,9 +86,13 @@ function doResult() {
             
             hint="("+samesame+")"+":"+"("+ samelet+")";
             if (guess == secretWord) {//check for matching word
-            document.getElementById("success").innerHTML= guess+"! "+result+attempts+" tries! Play again!";//display message
+            document.getElementById("success").innerHTML= guess+"! "+result+(attempts+1)+" tries! Play again!";//display message
             document.getElementById("guess").value="";//clear box
             document.getElementById("success").value="";//clear box
+            document.getElementById("display1").innerHTML= "&nbsp";  //display progress
+            document.getElementById("display2").innerHTML= "&nbsp";  //display progress
+            document.getElementById("display3").innerHTML= "&nbsp";  //display progress
+            document.getElementById("display4").innerHTML= "&nbsp";  //display progress                        
             secretWord=getSecretWord();
       //      document.getElementById("secret").innerHTML= secretWord;
             attempts = -1;
@@ -101,7 +105,7 @@ function doResult() {
             
             else {
 
-            document.getElementById("success").innerHTML= tries+=guess+"-- " + hint+";  ";//display entries
+            document.getElementById("success").innerHTML= tries+=guess+"-- " + hint + "<br>";//display entries
             document.getElementById("guess").value="";//clear box
               } 
             
