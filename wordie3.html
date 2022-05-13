@@ -91,10 +91,7 @@ samelet+=guess.charAt(i);
             document.getElementById("success").innerHTML= guess+"! "+result+(attempts+1)+" tries! Play again!";//display message
             document.getElementById("guess").value="";//clear box
             document.getElementById("success").value="";//clear box
-            document.getElementById("display1").innerHTML= "&nbsp";  //display progress
-            document.getElementById("display2").innerHTML= "&nbsp";  //display progress
-            document.getElementById("display3").innerHTML= "&nbsp";  //display progress
-            document.getElementById("display4").innerHTML= "&nbsp";  //display progress                        
+                                   
             secretWord=getSecretWord();
       //      document.getElementById("secret").innerHTML= secretWord;
             attempts = -1;
@@ -109,6 +106,10 @@ samelet+=guess.charAt(i);
 
             document.getElementById("success").innerHTML= tries+=guess+"-- " + hint + "<br>";//display entries
             document.getElementById("guess").value="";//clear box
+            document.getElementById("display1").innerHTML= "&nbsp";  //display progress
+            document.getElementById("display2").innerHTML= "&nbsp";  //display progress
+            document.getElementById("display3").innerHTML= "&nbsp";  //display progress
+            document.getElementById("display4").innerHTML= "&nbsp";  //display progress             
               } 
             
          attempts +=1;
